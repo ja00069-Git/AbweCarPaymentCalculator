@@ -44,13 +44,11 @@ public class PaymentCalcModel
     /// <returns>Return the monthly payment</returns>
     public double? CalculateMonthlyPayment()
     {
-        if (PurchasePrice == null || InterestRate == null || LoanTerm == null) return null;
-
-        double? monthlyInterestRate = InterestRate / 100;
-        var loanTermInMonths = LoanTerm / 12;
-
-        var monthlyPayment = PurchasePrice * monthlyInterestRate /
-                             (1 - (double?)Math.Pow((double)(1 + monthlyInterestRate), (double)-loanTermInMonths));
+        float? decimalInterestRate = InterestRate / 100;
+        const int months = 12;
+        double? monthlyPayment = PurchasePrice * (decimalInterestRate / months) /
+                             (1 - Math.Pow((double)(1 + decimalInterestRate / months)!,
+                                 (double)(-months * LoanTerm)!));
 
         return monthlyPayment;
     }
