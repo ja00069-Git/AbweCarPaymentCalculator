@@ -1,6 +1,57 @@
-namespace AbweCarPaymentCalculator.Models
+using System.ComponentModel.DataAnnotations;
+
+namespace AbweCarPaymentCalculator.Models;
+/// <summary>
+/// Jabesi Abwe
+/// 26/01/2024
+/// The model for the Payment Calculator, which calculates the monthly payment based on the purchase price, interest rate, and loan term.
+/// </summary>
+public class PaymentCalcModel
 {
-    public class PaymentCalcModel
+    /// <summary>
+    /// Gets or sets the purchase price.
+    /// </summary>
+    /// <value>
+    /// The purchase price.
+    /// </value>
+    [Required(ErrorMessage = "Please Enter a Purchase")]
+    [Range(1, double.MaxValue, ErrorMessage = "Purchase Price must be greater than 0.")]
+    public double? PurchasePrice { get; set; }
+
+    /// <summary>
+    /// Gets or sets the interest rate.
+    /// </summary>
+    /// <value>
+    /// The interest rate.
+    /// </value>
+    [Required(ErrorMessage = "Please Enter a Interest Rate.")]
+    [Range(0, 20, ErrorMessage = "Interest Rate must be between 0 and 20.")]
+    public float? InterestRate { get; set; }
+
+    /// <summary>
+    /// Gets or sets the loan term.
+    /// </summary>
+    /// <value>
+    /// The loan term.
+    /// </value>
+    [Required(ErrorMessage = "Please Enter a Loan Term.")]
+    [Range(1, 72, ErrorMessage = "Loan Term must be between 1 and 7.")]
+    public int? LoanTerm { get; set; }
+
+    /// <summary>
+    /// Calculates the monthly payment.
+    /// </summary>
+    /// <returns>Return the monthly payment</returns>
+    public double? CalculateMonthlyPayment()
     {
+        if (PurchasePrice == null || InterestRate == null || LoanTerm == null) return null;
+
+        double? monthlyInterestRate = InterestRate / 100;
+        var loanTermInMonths = LoanTerm / 12;
+
+        var monthlyPayment = PurchasePrice * monthlyInterestRate /
+                             (1 - (double?)Math.Pow((double)(1 + monthlyInterestRate), (double)-loanTermInMonths));
+
+        return monthlyPayment;
     }
 }
