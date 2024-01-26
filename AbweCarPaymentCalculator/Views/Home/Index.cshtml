@@ -2,28 +2,36 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-<h1>Car Payment Calculator </h1>
-<form asp-action="Index" method="Post">
-    <div>
-        <label asp-for="PurchasePrice">Purchase Price:</label>
-        <input asp-for="PurchasePrice" />
-        <a asp-validation-for="PurchasePrice"></a>
-    </div>
-    <div>
-        <label asp-for="InterestRate">Interest Rate:</label>
-        <input asp-for="InterestRate" />
-        <a asp-validation-for="InterestRate"></a>
-    </div>
-    <div>
-        <label asp-for="LoanTerm">Loan Term:</label>
-        <input asp-for="LoanTerm" />
-        <a asp-validation-for="LoanTerm"></a>
-    </div>
-    <div>
-        <label>Monthly Payment:</label>
-        <label>@ViewBag.Fv.ToString("C2")</label>
-    </div>
-    <button type="submit">Calculate</button>
-    <a asp-action="Index">Clear</a>
-</form>
+<div class="container">
+    <h1>Car Payment Calculator </h1>
+    <form asp-action="Index" method="Post">
+        <div class="row">
+            <label asp-for="PurchasePrice" class="col-lg-2 col-md-3 col-form-label">Purchase Price:</label>
+            <div class="col-md-3">
+                <input asp-for="PurchasePrice" class="form-control" />
+            </div>
+            <span asp-validation-for="PurchasePrice" class="col text-danger"></span>
+        </div>
+        <div class="row">
+            <label asp-for="InterestRate" class="col-lg-2 col-md-3 col-form-label">Interest Rate:</label>
+            <div class="col-md-3">
+                <input asp-for="InterestRate" class="form-control" />
+            </div>
+            <span asp-validation-for="InterestRate" class="col text-danger"></span>
+        </div>
+        <div class="row">
+            <label asp-for="LoanTerm" class="col-lg-2 col-md-3 col-form-label">Loan Term:</label>
+            <div class="col-md-3">
+                <input asp-for="LoanTerm" class="form-control" />
+            </div>
+            <span asp-validation-for="LoanTerm" class="col text-danger"></span>
+        </div>
+        <div>
+            <label class="col-lg-2 col-md-3 col-form-label">Monthly Payment:</label>
+            <label class="col-lg-2 col-md-3 col-form-label">@ViewBag.Fv.ToString("C2")</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Calculate</button>
+        <a asp-action="Index" class="btn btn-outline-primary">Clear</a>
+    </form>
+</div>
 

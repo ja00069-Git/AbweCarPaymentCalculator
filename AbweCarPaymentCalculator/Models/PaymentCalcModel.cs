@@ -25,7 +25,7 @@ public class PaymentCalcModel
     /// The interest rate.
     /// </value>
     [Required(ErrorMessage = "Please Enter a Interest Rate.")]
-    [Range(0, 20, ErrorMessage = "Interest Rate must be between 0 and 20.")]
+    [Range(1, 20, ErrorMessage = "Interest Rate must be between 1 and 20.")]
     public float? InterestRate { get; set; }
 
     /// <summary>

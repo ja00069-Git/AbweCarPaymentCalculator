@@ -16,6 +16,21 @@ div {
     margin-bottom: .5em;
 }
 
-button {
+.btn-primary {
     background-color: #07c6db;
+    border-color: #07c6db;
 }
+.btn-outline-primary {
+    color: #07c6db;
+    border-color: #07c6db;
+}
+.btn-primary:hover {
+    background-color: #07c6db;
+    border-color: #07c6db;
+}
+.btn-outline-primary:hover {
+    background-color: #07c6db;
+    border-color: #07c6db;
+    color:#fff;
+}
+
