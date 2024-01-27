@@ -2,11 +2,13 @@
     padding: 1em;
     font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-h1 {
-    color: #07c6db;
-    font-size: 36px;
-    margin-top: 0;
+
+.container header {
+    color: #fff;
+    font-size: 3em;
+    background-color: #07c6db;
 }
+
 label {
     display: inline-block;
     width: 9em;
@@ -33,4 +35,5 @@ div {
     border-color: #07c6db;
     color:#fff;
 }
+
 

@@ -1,20 +1,19 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"]</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/Site.css" />
-</head>
-<body>
-    <header>
-    </header>
-    <div>
-        <main role="main">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>@ViewData["Title"]</title>
+        <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="~/css/Site.css"/>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css" integrity="sha-long-hash-code" crossorigin="anonymous"/>
+    </head>
+    <body>
+        <div class="container">
+            <header href="/car" class="p-4 mb-5 col-lg-8 col-md-10 rounded border">
+                <i class="fa-solid fa-car"></i>&nbsp;Payment Calculator
+            </header>
             @RenderBody()
-        </main>
-    </div>
-
-</body>
+        </div>
+    </body>
 </html>

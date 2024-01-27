@@ -1,28 +1,27 @@
 ﻿@model AbweCarPaymentCalculator.Models.PaymentCalcModel
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Abwe Car Payment Calculator";
 }
 <div class="container">
-    <h1>Car Payment Calculator </h1>
     <form asp-action="Index" method="Post">
-        <div class="row">
+         <div class="row">
             <label asp-for="PurchasePrice" class="col-lg-2 col-md-3 col-form-label">Purchase Price:</label>
             <div class="col-md-3">
-                <input asp-for="PurchasePrice" class="form-control" />
+                <input asp-for="PurchasePrice" class="form-control"/>
             </div>
             <span asp-validation-for="PurchasePrice" class="col text-danger"></span>
         </div>
         <div class="row">
             <label asp-for="InterestRate" class="col-lg-2 col-md-3 col-form-label">Interest Rate:</label>
             <div class="col-md-3">
-                <input asp-for="InterestRate" class="form-control" />
+                <input asp-for="InterestRate" class="form-control"/>
             </div>
             <span asp-validation-for="InterestRate" class="col text-danger"></span>
         </div>
         <div class="row">
             <label asp-for="LoanTerm" class="col-lg-2 col-md-3 col-form-label">Loan Term:</label>
             <div class="col-md-3">
-                <input asp-for="LoanTerm" class="form-control" />
+                <input asp-for="LoanTerm" class="form-control"/>
             </div>
             <span asp-validation-for="LoanTerm" class="col text-danger"></span>
         </div>
