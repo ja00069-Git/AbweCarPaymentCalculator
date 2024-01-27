@@ -35,7 +35,7 @@ public class PaymentCalcModel
     /// The loan term.
     /// </value>
     [Required(ErrorMessage = "Please Enter a Loan Term.")]
-    [Range(1, 72, ErrorMessage = "Loan Term must be between 1 and 7.")]
+    [Range(1, 7, ErrorMessage = "Loan Term must be between 1 and 7.")]
     public int? LoanTerm { get; set; }
 
     /// <summary>
